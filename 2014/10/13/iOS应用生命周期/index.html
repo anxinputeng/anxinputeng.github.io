@@ -6,18 +6,18 @@
   
   <title>iOS应用生命周期 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="各个程序运行状态时代理的回调，告诉代理进程启动但还没进入状态保存1- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions 告诉代理启动基本完成程序准备开始运行1- (BOOL)application:(UIApplication *)a">
+  <meta name="description" content="各个程序运行状态时代理的回调，告诉代理进程启动但还没进入状态保存 1- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions  告诉代理启动基本完成程序准备开始运行 1- (BOOL)application:(UIApplication">
 <meta name="keywords" content="iOS 生命周期 UIApplication">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS应用生命周期">
 <meta property="og:url" content="https://wangzipan.github.io/2014/10/13/iOS应用生命周期/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="各个程序运行状态时代理的回调，告诉代理进程启动但还没进入状态保存1- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions 告诉代理启动基本完成程序准备开始运行1- (BOOL)application:(UIApplication *)a">
+<meta property="og:description" content="各个程序运行状态时代理的回调，告诉代理进程启动但还没进入状态保存 1- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions  告诉代理启动基本完成程序准备开始运行 1- (BOOL)application:(UIApplication">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-17T09:01:20.831Z">
+<meta property="og:updated_time" content="2018-01-17T09:07:38.607Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS应用生命周期">
-<meta name="twitter:description" content="各个程序运行状态时代理的回调，告诉代理进程启动但还没进入状态保存1- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions 告诉代理启动基本完成程序准备开始运行1- (BOOL)application:(UIApplication *)a">
+<meta name="twitter:description" content="各个程序运行状态时代理的回调，告诉代理进程启动但还没进入状态保存 1- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions  告诉代理启动基本完成程序准备开始运行 1- (BOOL)application:(UIApplication">
   
   
   <link rel="stylesheet" href="/css/style.css">
@@ -89,21 +89,41 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>各个程序运行状态时代理的回调，告诉代理进程启动但还没进入状态保存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions</span><br></pre></td></tr></table></figure></p>
-<p>告诉代理启动基本完成程序准备开始运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions</span><br></pre></td></tr></table></figure></p>
+        <ol>
+<li><p>各个程序运行状态时代理的回调，告诉代理进程启动但还没进入状态保存</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>告诉代理启动基本完成程序准备开始运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 <a id="more"></a>
-<p>当应用程序将要入非活动状态执行，在此期间，应用程序不接收消息或事件，比如来电话了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)applicationWillResignActive:(UIApplication *)application</span><br></pre></td></tr></table></figure></p>
-<p>当应用程序入活动状态执行，这个刚好跟上面那个方法相反<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)applicationDidBecomeActive:(UIApplication *)application</span><br></pre></td></tr></table></figure></p>
-<p>当程序被推送到后台的时候调用。所以要设置后台继续运行，则在这个函数里面设置即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)applicationDidEnterBackground:(UIApplication *)application</span><br></pre></td></tr></table></figure></p>
-<p>当程序从后台将要重新回到前台时候调用，这个刚好跟上面的那个方法相反<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)applicationWillEnterForeground:(UIApplication *)application</span><br></pre></td></tr></table></figure></p>
-<p>当程序将要退出是被调用，通常是用来保存数据和一些退出前的清理工作。这个需要要设置UIApplicationExitsOnSuspend的键值<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)applicationWillTerminate:(UIApplication *)application</span><br></pre></td></tr></table></figure></p>
-<p>当程序载入后执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)applicationDidFinishLaunching:(UIApplication*)application</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p>当应用程序将要入非活动状态执行，在此期间，应用程序不接收消息或事件，比如来电话了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)applicationWillResignActive:(UIApplication *)application</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当应用程序入活动状态执行，这个刚好跟上面那个方法相反</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)applicationDidBecomeActive:(UIApplication *)application</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当程序被推送到后台的时候调用。所以要设置后台继续运行，则在这个函数里面设置即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)applicationDidEnterBackground:(UIApplication *)application</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当程序从后台将要重新回到前台时候调用，这个刚好跟上面的那个方法相反</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)applicationWillEnterForeground:(UIApplication *)application</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当程序将要退出是被调用，通常是用来保存数据和一些退出前的清理工作。这个需要要设置UIApplicationExitsOnSuspend的键值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)applicationWillTerminate:(UIApplication *)application</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当程序载入后执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)applicationDidFinishLaunching:(UIApplication*)application</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://wangzipan.github.io/2014/10/13/iOS应用生命周期/" data-id="cjciudlhz0001i8s64vu17z6p" class="article-share-link">分享到</a>
+        <a data-url="https://wangzipan.github.io/2014/10/13/iOS应用生命周期/" data-id="cjciumt3k0003pzs68ekqbwdv" class="article-share-link">分享到</a>
       
 
       
@@ -116,6 +136,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2014/11/20/Xcode6添加pch文件教程/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          iOS应用生命周期
+        
+      </div>
+    </a>
   
   
     <a href="/2014/01/17/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
@@ -139,6 +168,10 @@
       <ul>
         
           <li>
+            <a href="/2014/11/20/Xcode6添加pch文件教程/">iOS应用生命周期</a>
+          </li>
+        
+          <li>
             <a href="/2014/10/13/iOS应用生命周期/">iOS应用生命周期</a>
           </li>
         
@@ -157,7 +190,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -166,7 +199,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iOS-生命周期-UIApplication/" style="font-size: 10px;">iOS 生命周期 UIApplication</a>
+      <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iOS-pch-prefix/" style="font-size: 10px;">iOS pch prefix</a> <a href="/tags/iOS-生命周期-UIApplication/" style="font-size: 10px;">iOS 生命周期 UIApplication</a>
     </div>
   </div>
 
