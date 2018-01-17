@@ -86,20 +86,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><font color="#ff0000">各个程序运行状态时代理的回调，告诉代理进程启动但还没进入状态保存</font><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions</span><br></pre></td></tr></table></figure></p>
-<p><font color="#ff0000">告诉代理启动基本完成程序准备开始运行</font><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions</span><br></pre></td></tr></table></figure></p>
-<p><font color="#ff0000">当应用程序将要入非活动状态执行，在此期间，应用程序不接收消息或事件，比如来电话了</font><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)applicationWillResignActive:(UIApplication *)application</span><br></pre></td></tr></table></figure></p>
-<p><font color="#ff0000">当应用程序入活动状态执行，这个刚好跟上面那个方法相反</font><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)applicationDidBecomeActive:(UIApplication *)application</span><br></pre></td></tr></table></figure></p>
-<p><font color="#ff0000">当程序被推送到后台的时候调用。所以要设置后台继续运行，则在这个函数里面设置即可</font><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)applicationDidEnterBackground:(UIApplication *)application</span><br></pre></td></tr></table></figure></p>
-<p><font color="#ff0000">当程序从后台将要重新回到前台时候调用，这个刚好跟上面的那个方法相反</font><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)applicationWillEnterForeground:(UIApplication *)application</span><br></pre></td></tr></table></figure></p>
-<p><font color="#ff0000">当程序将要退出是被调用，通常是用来保存数据和一些退出前的清理工作。这个需要要设置UIApplicationExitsOnSuspend的键值</font><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)applicationWillTerminate:(UIApplication *)application</span><br></pre></td></tr></table></figure></p>
-<p><font color="#ff0000">当程序载入后执行</font><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)applicationDidFinishLaunching:(UIApplication*)application</span><br></pre></td></tr></table></figure></p>
-
+        <p>各个程序运行状态时代理的回调，告诉代理进程启动但还没进入状态保存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions</span><br></pre></td></tr></table></figure></p>
+<p>告诉代理启动基本完成程序准备开始运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions</span><br></pre></td></tr></table></figure></p>
+        
+          <p class="article-more-link">
+            <a href="/2014/10/13/iOS应用生命周期/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://wangzipan.github.io/2014/10/13/iOS应用生命周期/" data-id="cjciu1kao00038ys63lfgfg2v" class="article-share-link">分享到</a>
+        <a data-url="https://wangzipan.github.io/2014/10/13/iOS应用生命周期/" data-id="cjciudlhz0001i8s64vu17z6p" class="article-share-link">分享到</a>
       
 
       
@@ -150,7 +148,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://wangzipan.github.io/2014/01/17/hello-world/" data-id="cjciu1ka200008ys64opp4sp2" class="article-share-link">分享到</a>
+        <a data-url="https://wangzipan.github.io/2014/01/17/hello-world/" data-id="cjciudlht0000i8s64yyslnrv" class="article-share-link">分享到</a>
       
 
       
