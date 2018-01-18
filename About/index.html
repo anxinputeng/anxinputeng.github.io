@@ -1,23 +1,23 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   
-  <title>iOS9网络访问失败 | Hexo</title>
+  <title>关于 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="升级Xcode 7.0 bata发现网络访问失败。输出错误信息12The resource could not be loaded because the App Transport Security policy requires the use of a secure connection.Google后查证，iOS9引入了新特性App Transport Security (ATS)。详情：">
-<meta name="keywords" content="iOS9,https,网络,升级">
-<meta property="og:type" content="article">
-<meta property="og:title" content="iOS9网络访问失败">
-<meta property="og:url" content="https://wangzipan.github.io/2015/09/21/iOS9网络访问失败/index.html">
+  <meta name="description" content="我的">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于">
+<meta property="og:url" content="https://wangzipan.github.io/About/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="升级Xcode 7.0 bata发现网络访问失败。输出错误信息12The resource could not be loaded because the App Transport Security policy requires the use of a secure connection.Google后查证，iOS9引入了新特性App Transport Security (ATS)。详情：">
+<meta property="og:description" content="我的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-17T09:54:01.793Z">
+<meta property="og:updated_time" content="2018-01-18T01:49:35.518Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS9网络访问失败">
-<meta name="twitter:description" content="升级Xcode 7.0 bata发现网络访问失败。输出错误信息12The resource could not be loaded because the App Transport Security policy requires the use of a secure connection.Google后查证，iOS9引入了新特性App Transport Security (ATS)。详情：">
+<meta name="twitter:title" content="关于">
+<meta name="twitter:description" content="我的">
   
   
   <link rel="stylesheet" href="/css/style.css">
@@ -71,16 +71,12 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main"><article id="post-iOS9网络访问失败" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/09/21/iOS9网络访问失败/" class="article-date">
-  <time datetime="2015-09-21T03:11:32.000Z" itemprop="datePublished">2015-09-21</time>
+    <a href="/About/index.html" class="article-date">
+  <time datetime="2018-01-18T01:49:03.000Z" itemprop="datePublished">2018-01-18</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -89,7 +85,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      iOS9网络访问失败
+      关于
     </h1>
   
 
@@ -97,46 +93,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>升级Xcode 7.0 bata发现网络访问失败。<br>输出错误信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">The resource could not be loaded because the App Transport Security policy requires the use of a secure connection.</span><br><span class="line">Google后查证，iOS9引入了新特性App Transport Security (ATS)。详情：App Transport Security (ATS)</span><br></pre></td></tr></table></figure></p>
-<p>新特性要求App内访问的网络必须使用HTTPS协议。<br>但是现在公司的项目使用的是HTTP协议，使用私有加密方式保证数据安全。现在也不能马上改成HTTPS协议传输。</p>
-<h4 id="最终找到以下解决办法："><a href="#最终找到以下解决办法：" class="headerlink" title="最终找到以下解决办法："></a>最终找到以下解决办法：</h4><p>在<font color="#ff0000">Info.plist</font>中添加<font color="#ff0000">NSAppTransportSecurity</font>类型Dictionary。</p>
-<p>在<font color="#ff0000">NSAppTransportSecurity</font>下添加<font color="#ff0000">NSAllowsArbitraryLoads</font>类型<font color="#ff0000">Boolean</font>,值设为<font color="#ff0000">YES</font>.</p>
+        <p>我的</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://wangzipan.github.io/2015/09/21/iOS9网络访问失败/" data-id="cjcju9cyt0015q4s6fgojs96e" class="article-share-link">分享到</a>
+        <a data-url="https://wangzipan.github.io/About/index.html" data-id="cjcju9cxh0000q4s69kpumkqa" class="article-share-link">分享到</a>
       
 
       
 
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/https/">https</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS9/">iOS9</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/升级/">升级</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络/">网络</a></li></ul>
-
     </footer>
   </div>
   
     
-<nav id="article-nav">
-  
-    <a href="/2015/09/28/快速排序/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">
-        
-          快速排序
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2015/09/16/iOS中Bitcode的介绍及配置 关于Xcode7报错/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">iOS中Bitcode的介绍及配置 关于Xcode7报错</div>
-    </a>
-  
-</nav>
-
   
 </article>
 
@@ -250,3 +222,4 @@
 </div>
 </body>
 </html>
+
