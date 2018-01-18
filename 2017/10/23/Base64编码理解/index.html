@@ -6,18 +6,18 @@
   
   <title>Base64编码理解 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="将每三个字节作为一组，一共是24个二进制位。 将这24个二进制位分为四组，每个组有6个二进制位。 在每组前面加两个00，扩展成32个二进制位，转换为10进制 即四个字节。(如果字节数不足三，最后一组除了前面加两个0以外，后面也要加两个0。) 得到扩展后的每个字节的对应符号，这就是Base64的编码值。  汉字: 先转换为24位的二进制字符串，然后按规则，转换成四组一共32位的二进制值参考资料：-">
+  <meta name="description" content="将每三个字节作为一组，一共是24个二进制位。 将这24个二进制位分为四组，每个组有6个二进制位。 在每组前面加两个00，扩展成32个二进制位，转换为10进制 即四个字节。(如果字节数不足三，最后一组除了前面加两个0以外，后面也要加两个0。) 得到扩展后的每个字节的对应符号，这就是Base64的编码值。  汉字: 先转换为24位的二进制字符串，然后按规则，转换成四组一共32位的二进制值。 参考 B">
 <meta name="keywords" content="Base64">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Base64编码理解">
 <meta property="og:url" content="http://zipan.me/2017/10/23/Base64编码理解/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="将每三个字节作为一组，一共是24个二进制位。 将这24个二进制位分为四组，每个组有6个二进制位。 在每组前面加两个00，扩展成32个二进制位，转换为10进制 即四个字节。(如果字节数不足三，最后一组除了前面加两个0以外，后面也要加两个0。) 得到扩展后的每个字节的对应符号，这就是Base64的编码值。  汉字: 先转换为24位的二进制字符串，然后按规则，转换成四组一共32位的二进制值参考资料：-">
+<meta property="og:description" content="将每三个字节作为一组，一共是24个二进制位。 将这24个二进制位分为四组，每个组有6个二进制位。 在每组前面加两个00，扩展成32个二进制位，转换为10进制 即四个字节。(如果字节数不足三，最后一组除了前面加两个0以外，后面也要加两个0。) 得到扩展后的每个字节的对应符号，这就是Base64的编码值。  汉字: 先转换为24位的二进制字符串，然后按规则，转换成四组一共32位的二进制值。 参考 B">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-18T07:47:21.089Z">
+<meta property="og:updated_time" content="2018-01-18T07:52:04.399Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Base64编码理解">
-<meta name="twitter:description" content="将每三个字节作为一组，一共是24个二进制位。 将这24个二进制位分为四组，每个组有6个二进制位。 在每组前面加两个00，扩展成32个二进制位，转换为10进制 即四个字节。(如果字节数不足三，最后一组除了前面加两个0以外，后面也要加两个0。) 得到扩展后的每个字节的对应符号，这就是Base64的编码值。  汉字: 先转换为24位的二进制字符串，然后按规则，转换成四组一共32位的二进制值参考资料：-">
+<meta name="twitter:description" content="将每三个字节作为一组，一共是24个二进制位。 将这24个二进制位分为四组，每个组有6个二进制位。 在每组前面加两个00，扩展成32个二进制位，转换为10进制 即四个字节。(如果字节数不足三，最后一组除了前面加两个0以外，后面也要加两个0。) 得到扩展后的每个字节的对应符号，这就是Base64的编码值。  汉字: 先转换为24位的二进制字符串，然后按规则，转换成四组一共32位的二进制值。 参考 B">
   
   
   <link rel="stylesheet" href="/css/style.css">
@@ -103,16 +103,16 @@
 <li>在每组前面加两个00，扩展成32个二进制位，转换为10进制 即四个字节。(如果字节数不足三，最后一组除了前面加两个0以外，后面也要加两个0。)</li>
 <li>得到扩展后的每个字节的对应符号，这就是Base64的编码值。</li>
 </ol>
-<font color="#ff0000">汉字: </font>先转换为24位的二进制字符串，然后按规则，转换成四组一共32位的二进制值<br><br><font color="#ff0000">参考资料：<br>- <a href="http://blog.csdn.net/flycct/article/details/51445966" target="_blank" rel="noopener">Base64编码理解</a></font>
-
-
-
+<p><font color="#ff0000">汉字: </font>先转换为24位的二进制字符串，然后按规则，转换成四组一共32位的二进制值。</p>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ul>
+<li><a href="http://blog.csdn.net/flycct/article/details/51445966" target="_blank" rel="noopener"><font color="#ff0000">Base64编码理解</font></a></li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zipan.me/2017/10/23/Base64编码理解/" data-id="cjck71eui0002ufs6d5z2szf4" class="article-share-link">分享到</a>
+        <a data-url="http://zipan.me/2017/10/23/Base64编码理解/" data-id="cjck78q0w000207s6pmwuj9f3" class="article-share-link">分享到</a>
       
 
       
