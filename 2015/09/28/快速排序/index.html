@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="笃 行">
 <meta property="og:description" content="1234567891011NSArray * array = [[NSArray alloc]initWithObjects:@&quot;8&quot;,@&quot;5&quot;,@&quot;1&quot;,@&quot;3&quot;,@&quot;7&quot;,@&quot;2&quot;, nil];NSArray * resultArray = [array sortedArrayUsingComparator:^NSComparisonResult(NSNumber * num, NSNumbe">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-17T09:58:35.232Z">
+<meta property="og:updated_time" content="2018-01-19T06:58:19.640Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="快速排序">
 <meta name="twitter:description" content="1234567891011NSArray * array = [[NSArray alloc]initWithObjects:@&quot;8&quot;,@&quot;5&quot;,@&quot;1&quot;,@&quot;3&quot;,@&quot;7&quot;,@&quot;2&quot;, nil];NSArray * resultArray = [array sortedArrayUsingComparator:^NSComparisonResult(NSNumber * num, NSNumbe">
@@ -99,13 +99,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">NSArray * array = [[NSArray alloc]initWithObjects:@<span class="string">"8"</span>,@<span class="string">"5"</span>,@<span class="string">"1"</span>,@<span class="string">"3"</span>,@<span class="string">"7"</span>,@<span class="string">"2"</span>, nil];</span><br><span class="line"></span><br><span class="line">NSArray * resultArray = [array sortedArrayUsingComparator:^NSComparisonResult(NSNumber * num, NSNumber * num2) &#123;</span><br><span class="line">// 从小到大排序</span><br><span class="line"><span class="keyword">if</span> ([num intValue] &lt; [num2 intValue]) &#123;</span><br><span class="line"><span class="built_in">return</span> NSOrderedAscending;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line"><span class="built_in">return</span> NSOrderedDescending;</span><br><span class="line">&#125;</span><br><span class="line">&#125;];</span><br><span class="line">NSLog(@<span class="string">"%@"</span>,resultArray);</span><br></pre></td></tr></table></figure>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">NSArray * array = [[NSArray alloc]initWithObjects:@<span class="string">"8"</span>,@<span class="string">"5"</span>,@<span class="string">"1"</span>,@<span class="string">"3"</span>,@<span class="string">"7"</span>,@<span class="string">"2"</span>, nil];</span><br><span class="line"></span><br><span class="line">NSArray * resultArray = [array sortedArrayUsingComparator:^NSComparisonResult(NSNumber * num, NSNumber * num2) &#123;</span><br><span class="line">    // 从小到大排序</span><br><span class="line">    <span class="keyword">if</span> ([num intValue] &lt; [num2 intValue]) &#123;</span><br><span class="line">        <span class="built_in">return</span> NSOrderedAscending;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">return</span> NSOrderedDescending;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br><span class="line">NSLog(@<span class="string">"%@"</span>,resultArray);</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zipan.me/2015/09/28/快速排序/" data-id="cjclkkqvt0018v0s6uufsdoe8" class="article-share-link">分享到</a>
+        <a data-url="http://zipan.me/2015/09/28/快速排序/" data-id="cjclkq9pv0018xqs6xrb7b6p6" class="article-share-link">分享到</a>
       
 
       
