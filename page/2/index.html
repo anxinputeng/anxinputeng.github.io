@@ -70,6 +70,53 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-Apple Watch网络请求" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/08/Apple Watch网络请求/" class="article-date">
+  <time datetime="2017-05-08T01:59:25.000Z" itemprop="datePublished">2017-05-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Apple-Watch/">Apple Watch</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/08/Apple Watch网络请求/">Apple Watch网络请求</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Apple Watch POST网络请求<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">NSURL *url = [NSURL URLWithString:@<span class="string">"http://testUrl.com:8080/wallet.html"</span>];</span><br><span class="line"></span><br><span class="line">NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];</span><br><span class="line"></span><br><span class="line">[request setHTTPMethod:@<span class="string">"POST"</span>];</span><br><span class="line"></span><br><span class="line">NSString *bodyStr = [NSString stringWithFormat:@<span class="string">"xx=xx&amp;xx=xx"</span>];</span><br><span class="line"></span><br><span class="line">NSData *bodyData = [bodyStr dataUsingEncoding:NSUTF8StringEncoding];</span><br><span class="line"></span><br><span class="line">[request setHTTPBody:bodyData];</span><br><span class="line"></span><br><span class="line">[request setValue:[NSString stringWithFormat:@<span class="string">"string"</span>] forHTTPHeaderField:@<span class="string">"heardstring"</span>];</span><br><span class="line"></span><br><span class="line">NSURLSession *session = [NSURLSession sharedSession];</span><br><span class="line"></span><br><span class="line">NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request</span><br><span class="line"></span><br><span class="line">completionHandler:</span><br><span class="line"></span><br><span class="line">^(NSData *data, NSURLResponse *response, NSError *error) &#123;</span><br><span class="line"></span><br><span class="line">NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&amp;error];</span><br><span class="line"></span><br><span class="line">NSLog(@<span class="string">"解析到的数据 dic = %@"</span>,dic);</span><br><span class="line">NSLog(@<span class="string">"解析到的数据 error = %@"</span>,error);</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">//使用resume方法启动任务</span><br><span class="line">[dataTask resume];</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://zipan.me/2017/05/08/Apple Watch网络请求/" data-id="cjcvmmjx9000028s6ip7qzx6i" class="article-share-link">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Apple-Watch/">Apple Watch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WatchKit/">WatchKit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络请求/">网络请求</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-DrawInRect绘制图片" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/06/15/DrawInRect绘制图片/" class="article-date">
@@ -106,7 +153,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zipan.me/2016/06/15/DrawInRect绘制图片/" data-id="cjcvlme640005dhs6kgv95rzb" class="article-share-link">分享到</a>
+        <a data-url="http://zipan.me/2016/06/15/DrawInRect绘制图片/" data-id="cjcvmmjxp000528s6q6ss9lrb" class="article-share-link">分享到</a>
       
 
       
@@ -154,7 +201,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zipan.me/2016/06/15/TabBarItem的setImageInsets属性/" data-id="cjcvlme6m000kdhs6rsagzaq5" class="article-share-link">分享到</a>
+        <a data-url="http://zipan.me/2016/06/15/TabBarItem的setImageInsets属性/" data-id="cjcvmmjya000m28s60obrmjn4" class="article-share-link">分享到</a>
       
 
       
@@ -207,7 +254,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zipan.me/2016/04/07/KeychainItemWrapper本地持久化/" data-id="cjcvlme690007dhs6b60mx0e7" class="article-share-link">分享到</a>
+        <a data-url="http://zipan.me/2016/04/07/KeychainItemWrapper本地持久化/" data-id="cjcvmmjxu000728s65yuszjsw" class="article-share-link">分享到</a>
       
 
       
@@ -259,7 +306,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zipan.me/2016/04/06/iPhone手机硬件信息/" data-id="cjcvlme7a001ddhs6oug8lly4" class="article-share-link">分享到</a>
+        <a data-url="http://zipan.me/2016/04/06/iPhone手机硬件信息/" data-id="cjcvmmjz3001j28s636q83ok4" class="article-share-link">分享到</a>
       
 
       
@@ -306,7 +353,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zipan.me/2016/02/25/iOS8 BlurEffect毛玻璃特效/" data-id="cjcvlme6x000xdhs69grwvzwz" class="article-share-link">分享到</a>
+        <a data-url="http://zipan.me/2016/02/25/iOS8 BlurEffect毛玻璃特效/" data-id="cjcvmmjyn000z28s67deqejp4" class="article-share-link">分享到</a>
       
 
       
@@ -353,7 +400,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zipan.me/2016/02/24/证书失效 missing ios distribution signing identity/" data-id="cjcvlme7m001odhs6v2vcpctb" class="article-share-link">分享到</a>
+        <a data-url="http://zipan.me/2016/02/24/证书失效 missing ios distribution signing identity/" data-id="cjcvmmjze001w28s6pjevy50g" class="article-share-link">分享到</a>
       
 
       
@@ -400,7 +447,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zipan.me/2016/02/18/贝塞尔曲线 实现手势解锁/" data-id="cjcvlme7t0020dhs6uaedqldg" class="article-share-link">分享到</a>
+        <a data-url="http://zipan.me/2016/02/18/贝塞尔曲线 实现手势解锁/" data-id="cjcvmmjzk002328s667w9shq5" class="article-share-link">分享到</a>
       
 
       
@@ -458,7 +505,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zipan.me/2015/12/01/隐藏UINavigationController黑色分割线/" data-id="cjcvlme7u0023dhs6xtf5sygt" class="article-share-link">分享到</a>
+        <a data-url="http://zipan.me/2015/12/01/隐藏UINavigationController黑色分割线/" data-id="cjcvmmjzp002628s6offhj65f" class="article-share-link">分享到</a>
       
 
       
@@ -505,63 +552,13 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zipan.me/2015/09/28/快速排序/" data-id="cjcvlme7i001mdhs6c0oom4c0" class="article-share-link">分享到</a>
+        <a data-url="http://zipan.me/2015/09/28/快速排序/" data-id="cjcvmmjz6001m28s6hzsu8cfo" class="article-share-link">分享到</a>
       
 
       
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/排序/">排序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数组/">数组</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-iOS9网络访问失败" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/09/21/iOS9网络访问失败/" class="article-date">
-  <time datetime="2015-09-21T03:11:32.000Z" itemprop="datePublished">2015-09-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/21/iOS9网络访问失败/">iOS9网络访问失败</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>升级Xcode 7.0 bata发现网络访问失败。<br>输出错误信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">The resource could not be loaded because the App Transport Security policy requires the use of a secure connection.</span><br><span class="line">iOS9引入了新特性App Transport Security (ATS)。</span><br></pre></td></tr></table></figure></p>
-<p>新特性要求App内访问的网络必须使用HTTPS协议。<br>但是现在公司的项目使用的是HTTP协议，使用私有加密方式保证数据安全。现在也不能马上改成HTTPS协议传输。</p>
-<h4 id="最终找到以下解决办法："><a href="#最终找到以下解决办法：" class="headerlink" title="最终找到以下解决办法："></a>最终找到以下解决办法：</h4><p>在<font color="#ff0000">Info.plist</font>中添加<font color="#ff0000">NSAppTransportSecurity</font>类型Dictionary。</p>
-<p>在<font color="#ff0000">NSAppTransportSecurity</font>下添加<font color="#ff0000">NSAllowsArbitraryLoads</font>类型<font color="#ff0000">Boolean</font>,值设为<font color="#ff0000">YES</font>.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://zipan.me/2015/09/21/iOS9网络访问失败/" data-id="cjcvlme700010dhs6uupfdkkd" class="article-share-link">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/https/">https</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS9/">iOS9</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/升级/">升级</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络/">网络</a></li></ul>
 
     </footer>
   </div>
@@ -586,6 +583,10 @@
       <ul>
         
           <li>
+            <a href="/2017/08/15/Swift学习笔记（五） -- 闭包/">Swift学习笔记（五） -- 闭包</a>
+          </li>
+        
+          <li>
             <a href="/2017/08/15/Swift学习笔记（四） -- 函数/">Swift学习笔记（四） -- 函数</a>
           </li>
         
@@ -601,10 +602,6 @@
             <a href="/2017/08/15/Swift学习笔记（一） -- 元组Tuple/">Swift学习笔记（一） -- 元组Tuple</a>
           </li>
         
-          <li>
-            <a href="/2017/07/24/详解NSString为什么要用copy:strong关键字/">详解NSString为什么要用copy/strong关键字</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -614,7 +611,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Apple-Watch/">Apple Watch</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Swift/">Swift</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xcode/">Xcode</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a><span class="category-list-count">19</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/加密/">加密</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/多线程/">多线程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/正则表达式/">正则表达式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/算法/">算法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/证书/">证书</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/智能硬件/">智能硬件</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Apple-Watch/">Apple Watch</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Swift/">Swift</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xcode/">Xcode</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a><span class="category-list-count">19</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/加密/">加密</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/多线程/">多线程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/正则表达式/">正则表达式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/算法/">算法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/证书/">证书</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/智能硬件/">智能硬件</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -623,7 +620,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -632,7 +629,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Apple-Watch/" style="font-size: 10px;">Apple Watch</a> <a href="/tags/Base64/" style="font-size: 10px;">Base64</a> <a href="/tags/DrawInRect/" style="font-size: 10px;">DrawInRect</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/GCD/" style="font-size: 10px;">GCD</a> <a href="/tags/Keychain/" style="font-size: 10px;">Keychain</a> <a href="/tags/NSString/" style="font-size: 10px;">NSString</a> <a href="/tags/Set/" style="font-size: 10px;">Set</a> <a href="/tags/Swift/" style="font-size: 15px;">Swift</a> <a href="/tags/TabBar/" style="font-size: 10px;">TabBar</a> <a href="/tags/TabBarItem/" style="font-size: 10px;">TabBarItem</a> <a href="/tags/UIApplication/" style="font-size: 10px;">UIApplication</a> <a href="/tags/UIBezierpath/" style="font-size: 10px;">UIBezierpath</a> <a href="/tags/UINavigationController/" style="font-size: 10px;">UINavigationController</a> <a href="/tags/Unicode/" style="font-size: 10px;">Unicode</a> <a href="/tags/WatchKit/" style="font-size: 10px;">WatchKit</a> <a href="/tags/Xcode9/" style="font-size: 10px;">Xcode9</a> <a href="/tags/bitcode/" style="font-size: 10px;">bitcode</a> <a href="/tags/blureffect/" style="font-size: 10px;">blureffect</a> <a href="/tags/cancelling/" style="font-size: 10px;">cancelling</a> <a href="/tags/copy/" style="font-size: 10px;">copy</a> <a href="/tags/forin/" style="font-size: 10px;">forin</a> <a href="/tags/for循环/" style="font-size: 10px;">for循环</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/iOS11/" style="font-size: 10px;">iOS11</a> <a href="/tags/iOS9/" style="font-size: 10px;">iOS9</a> <a href="/tags/iPhone/" style="font-size: 10px;">iPhone</a> <a href="/tags/mobileprovision/" style="font-size: 10px;">mobileprovision</a> <a href="/tags/pch/" style="font-size: 10px;">pch</a> <a href="/tags/pp文件/" style="font-size: 10px;">pp文件</a> <a href="/tags/prefix/" style="font-size: 10px;">prefix</a> <a href="/tags/strong/" style="font-size: 10px;">strong</a> <a href="/tags/switch/" style="font-size: 10px;">switch</a> <a href="/tags/synchronized/" style="font-size: 10px;">synchronized</a> <a href="/tags/while/" style="font-size: 10px;">while</a> <a href="/tags/代码混淆/" style="font-size: 10px;">代码混淆</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/分割线/" style="font-size: 10px;">分割线</a> <a href="/tags/加密/" style="font-size: 10px;">加密</a> <a href="/tags/升级/" style="font-size: 10px;">升级</a> <a href="/tags/图片/" style="font-size: 10px;">图片</a> <a href="/tags/图片合成/" style="font-size: 10px;">图片合成</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/学习笔记/" style="font-size: 15px;">学习笔记</a> <a href="/tags/手势解锁/" style="font-size: 10px;">手势解锁</a> <a href="/tags/持久化/" style="font-size: 10px;">持久化</a> <a href="/tags/排序/" style="font-size: 10px;">排序</a> <a href="/tags/控制流/" style="font-size: 10px;">控制流</a> <a href="/tags/数组/" style="font-size: 10px;">数组</a> <a href="/tags/智能硬件/" style="font-size: 10px;">智能硬件</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/毛玻璃/" style="font-size: 10px;">毛玻璃</a> <a href="/tags/浅拷贝/" style="font-size: 10px;">浅拷贝</a> <a href="/tags/深拷贝/" style="font-size: 10px;">深拷贝</a> <a href="/tags/生命周期/" style="font-size: 10px;">生命周期</a> <a href="/tags/真机调试/" style="font-size: 10px;">真机调试</a> <a href="/tags/硬件序列号/" style="font-size: 10px;">硬件序列号</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/网络请求/" style="font-size: 10px;">网络请求</a> <a href="/tags/蓝牙/" style="font-size: 10px;">蓝牙</a> <a href="/tags/设备型号/" style="font-size: 10px;">设备型号</a> <a href="/tags/证书/" style="font-size: 10px;">证书</a> <a href="/tags/黑线/" style="font-size: 10px;">黑线</a>
+      <a href="/tags/Apple-Watch/" style="font-size: 10px;">Apple Watch</a> <a href="/tags/Base64/" style="font-size: 10px;">Base64</a> <a href="/tags/DrawInRect/" style="font-size: 10px;">DrawInRect</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/GCD/" style="font-size: 10px;">GCD</a> <a href="/tags/Keychain/" style="font-size: 10px;">Keychain</a> <a href="/tags/NSString/" style="font-size: 10px;">NSString</a> <a href="/tags/Set/" style="font-size: 10px;">Set</a> <a href="/tags/Swift/" style="font-size: 20px;">Swift</a> <a href="/tags/TabBar/" style="font-size: 10px;">TabBar</a> <a href="/tags/TabBarItem/" style="font-size: 10px;">TabBarItem</a> <a href="/tags/UIApplication/" style="font-size: 10px;">UIApplication</a> <a href="/tags/UIBezierpath/" style="font-size: 10px;">UIBezierpath</a> <a href="/tags/UINavigationController/" style="font-size: 10px;">UINavigationController</a> <a href="/tags/Unicode/" style="font-size: 10px;">Unicode</a> <a href="/tags/WatchKit/" style="font-size: 10px;">WatchKit</a> <a href="/tags/Xcode9/" style="font-size: 10px;">Xcode9</a> <a href="/tags/bitcode/" style="font-size: 10px;">bitcode</a> <a href="/tags/blureffect/" style="font-size: 10px;">blureffect</a> <a href="/tags/cancelling/" style="font-size: 10px;">cancelling</a> <a href="/tags/copy/" style="font-size: 10px;">copy</a> <a href="/tags/forin/" style="font-size: 10px;">forin</a> <a href="/tags/for循环/" style="font-size: 10px;">for循环</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/iOS11/" style="font-size: 10px;">iOS11</a> <a href="/tags/iOS9/" style="font-size: 10px;">iOS9</a> <a href="/tags/iPhone/" style="font-size: 10px;">iPhone</a> <a href="/tags/mobileprovision/" style="font-size: 10px;">mobileprovision</a> <a href="/tags/pch/" style="font-size: 10px;">pch</a> <a href="/tags/pp文件/" style="font-size: 10px;">pp文件</a> <a href="/tags/prefix/" style="font-size: 10px;">prefix</a> <a href="/tags/strong/" style="font-size: 10px;">strong</a> <a href="/tags/switch/" style="font-size: 10px;">switch</a> <a href="/tags/synchronized/" style="font-size: 10px;">synchronized</a> <a href="/tags/while/" style="font-size: 10px;">while</a> <a href="/tags/代码混淆/" style="font-size: 10px;">代码混淆</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/分割线/" style="font-size: 10px;">分割线</a> <a href="/tags/加密/" style="font-size: 10px;">加密</a> <a href="/tags/升级/" style="font-size: 10px;">升级</a> <a href="/tags/图片/" style="font-size: 10px;">图片</a> <a href="/tags/图片合成/" style="font-size: 10px;">图片合成</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/学习笔记/" style="font-size: 20px;">学习笔记</a> <a href="/tags/手势解锁/" style="font-size: 10px;">手势解锁</a> <a href="/tags/持久化/" style="font-size: 10px;">持久化</a> <a href="/tags/排序/" style="font-size: 10px;">排序</a> <a href="/tags/控制流/" style="font-size: 10px;">控制流</a> <a href="/tags/数组/" style="font-size: 10px;">数组</a> <a href="/tags/智能硬件/" style="font-size: 10px;">智能硬件</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/毛玻璃/" style="font-size: 10px;">毛玻璃</a> <a href="/tags/浅拷贝/" style="font-size: 10px;">浅拷贝</a> <a href="/tags/深拷贝/" style="font-size: 10px;">深拷贝</a> <a href="/tags/生命周期/" style="font-size: 10px;">生命周期</a> <a href="/tags/真机调试/" style="font-size: 10px;">真机调试</a> <a href="/tags/硬件序列号/" style="font-size: 10px;">硬件序列号</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/网络请求/" style="font-size: 10px;">网络请求</a> <a href="/tags/蓝牙/" style="font-size: 10px;">蓝牙</a> <a href="/tags/设备型号/" style="font-size: 10px;">设备型号</a> <a href="/tags/证书/" style="font-size: 10px;">证书</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/黑线/" style="font-size: 10px;">黑线</a>
     </div>
   </div>
 

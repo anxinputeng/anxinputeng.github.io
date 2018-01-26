@@ -4,15 +4,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: 算法 | 笃 行</title>
+  <title>Swift学习笔记（五） -- 闭包 | 笃 行</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="笃 行">
-<meta property="og:url" content="http://zipan.me/categories/iOS/算法/index.html">
+  <meta name="description" content="通过学习Swift 4.0，总结一下Swift相对于Objective-C的一些新特征。 闭包 闭包是一种函数的简写形式，省去函数名，把参数和返回值放入花括号内。   使用函数，对数组排序（代码頽长）1234567var city = [&quot;Beijing&quot;,&quot;Shanghai&quot;,&quot;Guangzhou&quot;]func daoxu(a:String ,b:String) -&amp;gt;Bool&amp;#123;">
+<meta name="keywords" content="Swift,学习笔记,闭包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift学习笔记（五） -- 闭包">
+<meta property="og:url" content="http://zipan.me/2017/08/15/Swift学习笔记（五） -- 闭包/index.html">
 <meta property="og:site_name" content="笃 行">
+<meta property="og:description" content="通过学习Swift 4.0，总结一下Swift相对于Objective-C的一些新特征。 闭包 闭包是一种函数的简写形式，省去函数名，把参数和返回值放入花括号内。   使用函数，对数组排序（代码頽长）1234567var city = [&quot;Beijing&quot;,&quot;Shanghai&quot;,&quot;Guangzhou&quot;]func daoxu(a:String ,b:String) -&amp;gt;Bool&amp;#123;">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-01-26T07:49:02.131Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="笃 行">
+<meta name="twitter:title" content="Swift学习笔记（五） -- 闭包">
+<meta name="twitter:description" content="通过学习Swift 4.0，总结一下Swift相对于Objective-C的一些新特征。 闭包 闭包是一种函数的简写形式，省去函数名，把参数和返回值放入花括号内。   使用函数，对数组排序（代码頽长）1234567var city = [&quot;Beijing&quot;,&quot;Shanghai&quot;,&quot;Guangzhou&quot;]func daoxu(a:String ,b:String) -&amp;gt;Bool&amp;#123;">
   
   
     <link rel="icon" href="/favicon.png">
@@ -68,39 +73,78 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/09/28/快速排序/" class="archive-article-date">
-  <time datetime="2015-09-28T01:21:33.000Z" itemprop="datePublished">9月 28</time>
+      <section id="main"><article id="post-Swift学习笔记（五） -- 闭包" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/15/Swift学习笔记（五） -- 闭包/" class="article-date">
+  <time datetime="2017-08-15T07:50:01.000Z" itemprop="datePublished">2017-08-15</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Swift/">Swift</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/09/28/快速排序/">快速排序</a>
+    <h1 class="article-title" itemprop="name">
+      Swift学习笔记（五） -- 闭包
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>通过学习Swift 4.0，总结一下Swift相对于Objective-C的一些新特征。</p>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><ul>
+<li>闭包是一种函数的简写形式，省去函数名，把参数和返回值放入花括号内。</li>
+</ul>
+<ul>
+<li><font color="#ff0000">使用函数，对数组排序（代码頽长）</font><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var city = [<span class="string">"Beijing"</span>,<span class="string">"Shanghai"</span>,<span class="string">"Guangzhou"</span>]</span><br><span class="line"></span><br><span class="line">func daoxu(a:String ,b:String) -&gt;Bool</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">return</span> a &gt; b</span><br><span class="line">&#125;</span><br><span class="line">var city2 = city.sorted(by: daoxu)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><font color="#ff0000">使用闭包，对数组排序（代码简洁）</font>
+
+</li>
+</ul>
+<h4 id="方式一："><a href="#方式一：" class="headerlink" title="方式一："></a>方式一：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">city2 = city.sorted(by: &#123;(a, b) -&gt; Bool <span class="keyword">in</span></span><br><span class="line">    <span class="built_in">return</span> a &gt; b</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="方式二："><a href="#方式二：" class="headerlink" title="方式二："></a>方式二：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">city2 = city.sorted(by: &#123;(a, b) <span class="keyword">in</span></span><br><span class="line">    a &gt; b</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Tips:(相对于方式一)</span><br><span class="line">- 参数名类型、返回值类型，系统会自动推断，可省略不写</span><br><span class="line">- 如果闭包表达式代码只有1行，<span class="built_in">return</span>关键字，可省略不写</span><br></pre></td></tr></table></figure>
+<h4 id="方式三："><a href="#方式三：" class="headerlink" title="方式三："></a>方式三：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">city2 = city.sorted(by: &#123;<span class="variable">$0</span> &gt; <span class="variable">$1</span>&#125;)</span><br><span class="line"></span><br><span class="line">Tips:</span><br><span class="line">- 使用快捷参数，前缀$，从0开始递增</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://zipan.me/2017/08/15/Swift学习笔记（五） -- 闭包/" data-id="cjcvmmjy6000g28s6ezrk9a4h" class="article-share-link">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swift/">Swift</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/15/Swift学习笔记（四） -- 函数/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">Swift学习笔记（四） -- 函数</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
       
