@@ -4,15 +4,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: for循环 | 笃 行</title>
+  <title>Swift学习笔记（四） -- 函数 | 笃 行</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="笃 行">
-<meta property="og:url" content="http://zipan.me/tags/for循环/index.html">
+  <meta name="description" content="通过学习Swift 4.0，总结一下Swift相对于Objective-C的一些新特征。 函数 函数是一段代码块和代码块名称组合，用于执行特定的任务 使用函数叫”调用(call)” 就像公式一样，使用函数可以提供参数 函数调用结果叫 返回值 函数的类型，包含：参数类型 和 返回值类型   定义一个函数123456789func add(a: Int, b: Int) -&amp;gt; Int&amp;#123;">
+<meta name="keywords" content="Swift,学习笔记,函数,Function">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift学习笔记（四） -- 函数">
+<meta property="og:url" content="http://zipan.me/2017/08/15/Swift学习笔记（四） -- 函数/index.html">
 <meta property="og:site_name" content="笃 行">
+<meta property="og:description" content="通过学习Swift 4.0，总结一下Swift相对于Objective-C的一些新特征。 函数 函数是一段代码块和代码块名称组合，用于执行特定的任务 使用函数叫”调用(call)” 就像公式一样，使用函数可以提供参数 函数调用结果叫 返回值 函数的类型，包含：参数类型 和 返回值类型   定义一个函数123456789func add(a: Int, b: Int) -&amp;gt; Int&amp;#123;">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-01-26T07:20:46.553Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="笃 行">
+<meta name="twitter:title" content="Swift学习笔记（四） -- 函数">
+<meta name="twitter:description" content="通过学习Swift 4.0，总结一下Swift相对于Objective-C的一些新特征。 函数 函数是一段代码块和代码块名称组合，用于执行特定的任务 使用函数叫”调用(call)” 就像公式一样，使用函数可以提供参数 函数调用结果叫 返回值 函数的类型，包含：参数类型 和 返回值类型   定义一个函数123456789func add(a: Int, b: Int) -&amp;gt; Int&amp;#123;">
   
   
     <link rel="icon" href="/favicon.png">
@@ -68,39 +73,91 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/08/15/Swift学习笔记（三） -- 控制流/" class="archive-article-date">
-  <time datetime="2017-08-15T06:29:20.000Z" itemprop="datePublished">8月 15</time>
+      <section id="main"><article id="post-Swift学习笔记（四） -- 函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/15/Swift学习笔记（四） -- 函数/" class="article-date">
+  <time datetime="2017-08-15T06:53:20.000Z" itemprop="datePublished">2017-08-15</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Swift/">Swift</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/15/Swift学习笔记（三） -- 控制流/">Swift学习笔记（三） -- 控制流</a>
+    <h1 class="article-title" itemprop="name">
+      Swift学习笔记（四） -- 函数
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>通过学习Swift 4.0，总结一下Swift相对于Objective-C的一些新特征。</p>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ul>
+<li>函数是一段代码块和代码块名称组合，用于执行特定的任务</li>
+<li>使用函数叫”调用(call)”</li>
+<li>就像公式一样，使用函数可以提供参数</li>
+<li>函数调用结果叫 返回值</li>
+<li>函数的类型，包含：参数类型 和 返回值类型</li>
+</ul>
+<ul>
+<li><font color="#ff0000">定义一个函数</font><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">func add(a: Int, b: Int) -&gt; Int</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">return</span> a+b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">代码解读:</span><br><span class="line">- 定义一个函数名为:add的函数;</span><br><span class="line">- 参数为Int类型的a和b;</span><br><span class="line">- 返回值类型：Int</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<p>调用函数:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var sum = add(a:4,b:4)</span><br><span class="line"><span class="built_in">print</span>(sum)</span><br><span class="line"></span><br><span class="line">输出结果: sum = 8</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><font color="#ff0000">定义函数，返回值为元组</font><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">func reqFun() -&gt; (Int,Int)&#123;</span><br><span class="line">    <span class="built_in">return</span> (1,2)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">代码解读:</span><br><span class="line">- 定义一个函数名为:reqFun的函数;</span><br><span class="line">- 无传入参数;</span><br><span class="line">- 返回值类型：元组(Int,Int)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>调用函数:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var tmp = reqFun()</span><br><span class="line"><span class="built_in">print</span>(tmp.0)</span><br><span class="line"><span class="built_in">print</span>(tmp.1)</span><br><span class="line"></span><br><span class="line">输出结果:</span><br><span class="line">tmp.0 = 1</span><br><span class="line">tmp.1 = 2</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><font color="#ff0000">定义函数，参数包含默认值</font><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">func reqFun2(a:Int, b:Int = 2, c:Int) -&gt; Int</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">return</span> a+b+c</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">代码解读:</span><br><span class="line">- 定义一个函数名为:reqFun2的函数;</span><br><span class="line">- 参数为：a,b,c。其中b的默认值为2,可不传;</span><br><span class="line">- 返回值类型：Int</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>调用函数:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var tmp = reqFun2(a: 1, c: 3)</span><br><span class="line">var tmp2 = reqFun2(a: 1,b: 3, c: 3)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(tmp)</span><br><span class="line"><span class="built_in">print</span>(tmp2)</span><br><span class="line"></span><br><span class="line">输出结果:</span><br><span class="line">tmp = 6</span><br><span class="line">tmp2 = 7</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><font color="#ff0000">定义函数，参数包含函数</font><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">func reqFunc3(a:Int ,b:Int , method:(Int,Int) -&gt;Int) -&gt; Int</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">return</span> method(a,b)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">代码解读:</span><br><span class="line">- 定义一个函数名为:reqFun3的函数;</span><br><span class="line">- 参数为：a,b,method函数。method函数为2个Int类型参数，返回值Int;</span><br><span class="line">- 返回值类型：Int</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>实现method函数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">func method(x:Int ,y:Int)-&gt;Int&#123;</span><br><span class="line">    <span class="built_in">return</span> x * y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>调用函数:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var tmp = reqFunc3(a: 5, b: 2, method: method)</span><br><span class="line"><span class="built_in">print</span>(tmp)</span><br><span class="line"></span><br><span class="line">输出结果:</span><br><span class="line">tmp = 10</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://zipan.me/2017/08/15/Swift学习笔记（四） -- 函数/" data-id="cjcvlme6j000gdhs6voqgvptt" class="article-share-link">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Function/">Function</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swift/">Swift</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数/">函数</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/15/Swift学习笔记（三） -- 控制流/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">Swift学习笔记（三） -- 控制流</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
       
