@@ -4,15 +4,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: copy | 笃 行</title>
+  <title>Swift学习笔记（六） -- 枚举 | 笃 行</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="笃 行">
-<meta property="og:url" content="http://zipan.me/tags/copy/index.html">
+  <meta name="description" content="通过学习Swift 4.0，总结一下Swift相对于Objective-C的一些新特征。 枚举 enumeration 计数、列举(有限的情况)：详细叙述之意。”增强的、更抽象型”的数字类型； 附加值(可选) ：每一种类型都可以附加一个或多个值，形式是元组。  基本写法：123456enum Weather &amp;#123;    case sunny    case cloudy    case r">
+<meta name="keywords" content="Swift,学习笔记,枚举,enum">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift学习笔记（六） -- 枚举">
+<meta property="og:url" content="http://zipan.me/2017/08/18/Swift学习笔记（六） -- 枚举/index.html">
 <meta property="og:site_name" content="笃 行">
+<meta property="og:description" content="通过学习Swift 4.0，总结一下Swift相对于Objective-C的一些新特征。 枚举 enumeration 计数、列举(有限的情况)：详细叙述之意。”增强的、更抽象型”的数字类型； 附加值(可选) ：每一种类型都可以附加一个或多个值，形式是元组。  基本写法：123456enum Weather &amp;#123;    case sunny    case cloudy    case r">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-01-29T05:59:41.015Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="笃 行">
+<meta name="twitter:title" content="Swift学习笔记（六） -- 枚举">
+<meta name="twitter:description" content="通过学习Swift 4.0，总结一下Swift相对于Objective-C的一些新特征。 枚举 enumeration 计数、列举(有限的情况)：详细叙述之意。”增强的、更抽象型”的数字类型； 附加值(可选) ：每一种类型都可以附加一个或多个值，形式是元组。  基本写法：123456enum Weather &amp;#123;    case sunny    case cloudy    case r">
   
   
     <link rel="icon" href="/favicon.png">
@@ -68,39 +73,70 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/24/详解NSString为什么要用copy:strong关键字/" class="archive-article-date">
-  <time datetime="2017-07-24T15:01:15.000Z" itemprop="datePublished">7月 24</time>
+      <section id="main"><article id="post-Swift学习笔记（六） -- 枚举" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/18/Swift学习笔记（六） -- 枚举/" class="article-date">
+  <time datetime="2017-08-18T05:27:01.000Z" itemprop="datePublished">2017-08-18</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Swift/">Swift</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/24/详解NSString为什么要用copy:strong关键字/">详解NSString为什么要用copy/strong关键字</a>
+    <h1 class="article-title" itemprop="name">
+      Swift学习笔记（六） -- 枚举
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>通过学习Swift 4.0，总结一下Swift相对于Objective-C的一些新特征。</p>
+<h3 id="枚举-enumeration"><a href="#枚举-enumeration" class="headerlink" title="枚举 enumeration"></a>枚举 enumeration</h3><ul>
+<li>计数、列举(有限的情况)：详细叙述之意。”增强的、更抽象型”的数字类型；</li>
+<li>附加值(可选) ：每一种类型都可以附加一个或多个值，形式是元组。</li>
+</ul>
+<font color="#ff0000">基本写法：</font><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">enum Weather &#123;</span><br><span class="line">    <span class="keyword">case</span> sunny</span><br><span class="line">    <span class="keyword">case</span> cloudy</span><br><span class="line">    <span class="keyword">case</span> rainy</span><br><span class="line">    <span class="keyword">case</span> snow</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br><a id="more"></a><br><br>配合switch语句使用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var tmpW = Weather.cloudy</span><br><span class="line"></span><br><span class="line">switch tmpW &#123;</span><br><span class="line"><span class="keyword">case</span> .sunny :</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"天气晴朗🌞"</span>)</span><br><span class="line"><span class="keyword">case</span> .cloudy :</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"今天多云⛅️"</span>)</span><br><span class="line">default:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"天气未知"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br><font color="#ff0000">包含附加值的enum：</font>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">enum Weather2 &#123;</span><br><span class="line">    <span class="keyword">case</span> sunny(Int,String)</span><br><span class="line">    <span class="keyword">case</span> cloudy(Int,String)</span><br><span class="line">    <span class="keyword">case</span> rainy(Int,String)</span><br><span class="line">    <span class="keyword">case</span> snow(Int,String)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用举栗：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var tmp2 = Weather2.cloudy(22,<span class="string">"紫外线强"</span>)</span><br><span class="line"></span><br><span class="line">switch tmp2 &#123;</span><br><span class="line"><span class="keyword">case</span> .sunny(<span class="built_in">let</span> wendu, <span class="built_in">let</span> ziwai) :</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"天气晴朗,气温：\(wendu),\(ziwai)"</span>)</span><br><span class="line"><span class="keyword">case</span> .cloudy(<span class="built_in">let</span> wendu, <span class="built_in">let</span> ziwai) :</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"今天多云,气温：\(wendu),\(ziwai)"</span>)</span><br><span class="line">default:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"天气未知"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://zipan.me/2017/08/18/Swift学习笔记（六） -- 枚举/" data-id="cjczt1rc1000lv0s6p3o4r9au" class="article-share-link">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swift/">Swift</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/enum/">enum</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/枚举/">枚举</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/15/Swift学习笔记（五） -- 闭包/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">Swift学习笔记（五） -- 闭包</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
       
