@@ -4,15 +4,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2017/7 | 笃 行</title>
+  <title>GCD信号量[简记] -- 调度线程 | 笃 行</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="笃 行">
-<meta property="og:url" content="http://zipan.me/archives/2017/07/index.html">
+  <meta name="description" content="简单记录一下GCD信号量的使用。 123456789101112131415dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);ViewController * vc = [ViewController new];vc.myBlock = ^&amp;#123;    dispatch_semaphore_signal(semapho">
+<meta name="keywords" content="iOS,GCD,信号量,多线程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GCD信号量[简记] -- 调度线程">
+<meta property="og:url" content="http://zipan.me/2017/08/20/GCD信号量[简记]/index.html">
 <meta property="og:site_name" content="笃 行">
+<meta property="og:description" content="简单记录一下GCD信号量的使用。 123456789101112131415dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);ViewController * vc = [ViewController new];vc.myBlock = ^&amp;#123;    dispatch_semaphore_signal(semapho">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-01T07:59:12.967Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="笃 行">
+<meta name="twitter:title" content="GCD信号量[简记] -- 调度线程">
+<meta name="twitter:description" content="简单记录一下GCD信号量的使用。 123456789101112131415dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);ViewController * vc = [ViewController new];vc.myBlock = ^&amp;#123;    dispatch_semaphore_signal(semapho">
   
   
     <link rel="icon" href="/favicon.png">
@@ -68,58 +73,65 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/24/详解NSString为什么要用copy:strong关键字/" class="archive-article-date">
-  <time datetime="2017-07-24T15:01:15.000Z" itemprop="datePublished">7月 24</time>
+      <section id="main"><article id="post-GCD信号量[简记]" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/20/GCD信号量[简记]/" class="article-date">
+  <time datetime="2017-08-20T07:50:01.000Z" itemprop="datePublished">2017-08-20</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/iOS/">iOS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/24/详解NSString为什么要用copy:strong关键字/">详解NSString为什么要用copy/strong关键字</a>
+    <h1 class="article-title" itemprop="name">
+      GCD信号量[简记] -- 调度线程
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/23/Base64编码理解/" class="archive-article-date">
-  <time datetime="2017-07-23T07:51:24.000Z" itemprop="datePublished">7月 23</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/23/Base64编码理解/">Base64编码理解</a>
-    </h1>
-  
+        <p>简单记录一下GCD信号量的使用。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);</span><br><span class="line">ViewController * vc = [ViewController new];</span><br><span class="line">vc.myBlock = ^&#123;</span><br><span class="line">    dispatch_semaphore_signal(semaphore);</span><br><span class="line">    NSLog(@<span class="string">"信号量 -1"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//延迟2秒执行myBlock</span><br><span class="line">dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)),dispatch_get_global_queue(0, 0), ^&#123;</span><br><span class="line">    vc.myBlock();</span><br><span class="line">    NSLog(@<span class="string">"等待2秒结束"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);</span><br><span class="line">NSLog(@<span class="string">"接收成功"</span>);</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>执行结果：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2017-08-20 15:45:30.747164+0800 OC[48972:1332777] 等待2秒结束</span><br><span class="line">2017-08-20 15:45:30.747477+0800 OC[48972:1332777] 信号量 -1</span><br><span class="line">2017-08-20 15:45:30.747493+0800 OC[48972:1332730] 接收成功</span><br></pre></td></tr></table></figure></p>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://zipan.me/2017/08/20/GCD信号量[简记]/" data-id="cje8801v4000743s62gmf1a8b" class="article-share-link">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GCD/">GCD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/信号量/">信号量</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多线程/">多线程</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/18/Swift学习笔记（六） -- 枚举/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">Swift学习笔记（六） -- 枚举</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
       
