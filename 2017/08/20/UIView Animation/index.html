@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>UIView Animation | 笃 行</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="UIView动画，使用比较简单，不多赘述！ 方法一：12345678/* 基本动画* 执行动画时长：5秒* 动画类型(默认)：UIViewAnimationOptionCurveEaseInOut*/[UIView animateWithDuration:5 animations:^&amp;#123;    //例: 改变view的x坐标到100    view.frame.origin.x = 100">
+<meta name="keywords" content="iOS,动画,Animation,UIView动画,弹簧动画,Spring动画">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UIView Animation">
+<meta property="og:url" content="http://zipan.me/2017/08/20/UIView Animation/index.html">
+<meta property="og:site_name" content="笃 行">
+<meta property="og:description" content="UIView动画，使用比较简单，不多赘述！ 方法一：12345678/* 基本动画* 执行动画时长：5秒* 动画类型(默认)：UIViewAnimationOptionCurveEaseInOut*/[UIView animateWithDuration:5 animations:^&amp;#123;    //例: 改变view的x坐标到100    view.frame.origin.x = 100">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-01T08:33:32.082Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="UIView Animation">
+<meta name="twitter:description" content="UIView动画，使用比较简单，不多赘述！ 方法一：12345678/* 基本动画* 执行动画时长：5秒* 动画类型(默认)：UIViewAnimationOptionCurveEaseInOut*/[UIView animateWithDuration:5 animations:^&amp;#123;    //例: 改变view的x坐标到100    view.frame.origin.x = 100">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">笃 行</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Write the Code. Change the World.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/About">关于</a>
+        
+          <a class="main-nav-link" href="/Wiki">Wiki</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="zipan.me">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main"><article id="post-UIView Animation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/20/UIView Animation/" class="article-date">
+  <time datetime="2017-08-20T08:21:21.000Z" itemprop="datePublished">2017-08-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/iOS/">iOS</a>►<a class="article-category-link" href="/categories/iOS/动画/">动画</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      UIView Animation
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>UIView动画，使用比较简单，不多赘述！</p>
+<p><font color="#ff0000">方法一：</font><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/* 基本动画</span><br><span class="line">* 执行动画时长：5秒</span><br><span class="line">* 动画类型(默认)：UIViewAnimationOptionCurveEaseInOut</span><br><span class="line">*/</span><br><span class="line">[UIView animateWithDuration:5 animations:^&#123;</span><br><span class="line">    //例: 改变view的x坐标到100</span><br><span class="line">    view.frame.origin.x = 100;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p><font color="#ff0000">方法二：</font><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/* 基本动画</span><br><span class="line">* 执行动画时长：5秒</span><br><span class="line">* 延迟：2秒执行</span><br><span class="line">* 动画类型：UIViewAnimationOptionCurveEaseInOut</span><br><span class="line">*/</span><br><span class="line">[UIView animateWithDuration:5 delay:2 options:UIViewAnimationOptionCurveEaseInOut animations:^&#123;</span><br><span class="line">    //例: 改变view的x坐标到100</span><br><span class="line">    view.frame.origin.x = 100;</span><br><span class="line"></span><br><span class="line">&#125; completion:^(BOOL finished) &#123;</span><br><span class="line">    //动画结束code...</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure></p>
+<p><font color="#ff0000">方法三（弹簧效果）：</font><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/* 弹簧动画</span><br><span class="line">* 执行动画时长: 5秒</span><br><span class="line">* 延迟: 2秒执行</span><br><span class="line">* 动画类型: UIViewAnimationOptionCurveEaseInOut</span><br><span class="line">* Damping: 阻力 0~1系数（数值越小「弹簧」的振动效果越明显）</span><br><span class="line">* Velocity: 初始的速度（数值越大一开始移动越快）</span><br><span class="line">*/</span><br><span class="line">[UIView animateWithDuration:5 delay:2 usingSpringWithDamping:0.2 initialSpringVelocity:5 options:UIViewAnimationOptionCurveEaseInOut animations:^&#123;</span><br><span class="line">    //例: 改变view的x坐标到100</span><br><span class="line">    view.frame.origin.x = 100;</span><br><span class="line"></span><br><span class="line">&#125; completion:^(BOOL finished) &#123;</span><br><span class="line">    //动画结束code...</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://zipan.me/2017/08/20/UIView Animation/" data-id="cje8bd5cb000zh9s6yhwwgzhy" class="article-share-link">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Animation/">Animation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring动画/">Spring动画</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIView动画/">UIView动画</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动画/">动画</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/弹簧动画/">弹簧动画</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/08/20/CoreAnimation核心动画/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          CoreAnimation核心动画
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/08/20/GCD信号量[简记]/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">GCD信号量[简记]</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/20/CoreAnimation核心动画/">CoreAnimation核心动画</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/20/UIView Animation/">UIView Animation</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/20/GCD信号量[简记]/">GCD信号量[简记]</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/18/Swift学习笔记（六） -- 枚举/">Swift学习笔记（六） -- 枚举</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/15/Swift学习笔记（五） -- 闭包/">Swift学习笔记（五） -- 闭包</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Apple-Watch/">Apple Watch</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Swift/">Swift</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xcode/">Xcode</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a><span class="category-list-count">22</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/加密/">加密</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/动画/">动画</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/多线程/">多线程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/正则表达式/">正则表达式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/算法/">算法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/证书/">证书</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/智能硬件/">智能硬件</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Animation/" style="font-size: 13.33px;">Animation</a> <a href="/tags/Apple-Watch/" style="font-size: 10px;">Apple Watch</a> <a href="/tags/Base64/" style="font-size: 10px;">Base64</a> <a href="/tags/CALayer/" style="font-size: 10px;">CALayer</a> <a href="/tags/CATranstion/" style="font-size: 10px;">CATranstion</a> <a href="/tags/DrawInRect/" style="font-size: 10px;">DrawInRect</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/GCD/" style="font-size: 13.33px;">GCD</a> <a href="/tags/Keychain/" style="font-size: 10px;">Keychain</a> <a href="/tags/NSString/" style="font-size: 10px;">NSString</a> <a href="/tags/Set/" style="font-size: 10px;">Set</a> <a href="/tags/Spring动画/" style="font-size: 10px;">Spring动画</a> <a href="/tags/Swift/" style="font-size: 16.67px;">Swift</a> <a href="/tags/TabBar/" style="font-size: 10px;">TabBar</a> <a href="/tags/TabBarItem/" style="font-size: 10px;">TabBarItem</a> <a href="/tags/UIApplication/" style="font-size: 10px;">UIApplication</a> <a href="/tags/UIBezierpath/" style="font-size: 10px;">UIBezierpath</a> <a href="/tags/UINavigationController/" style="font-size: 10px;">UINavigationController</a> <a href="/tags/UIView动画/" style="font-size: 10px;">UIView动画</a> <a href="/tags/Unicode/" style="font-size: 10px;">Unicode</a> <a href="/tags/WatchKit/" style="font-size: 10px;">WatchKit</a> <a href="/tags/bitcode/" style="font-size: 10px;">bitcode</a> <a href="/tags/blureffect/" style="font-size: 10px;">blureffect</a> <a href="/tags/cancelling/" style="font-size: 10px;">cancelling</a> <a href="/tags/copy/" style="font-size: 10px;">copy</a> <a href="/tags/enum/" style="font-size: 10px;">enum</a> <a href="/tags/forin/" style="font-size: 10px;">forin</a> <a href="/tags/for循环/" style="font-size: 10px;">for循环</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/iOS9/" style="font-size: 10px;">iOS9</a> <a href="/tags/iPhone/" style="font-size: 10px;">iPhone</a> <a href="/tags/mobileprovision/" style="font-size: 10px;">mobileprovision</a> <a href="/tags/pch/" style="font-size: 10px;">pch</a> <a href="/tags/pp文件/" style="font-size: 10px;">pp文件</a> <a href="/tags/prefix/" style="font-size: 10px;">prefix</a> <a href="/tags/strong/" style="font-size: 10px;">strong</a> <a href="/tags/switch/" style="font-size: 10px;">switch</a> <a href="/tags/synchronized/" style="font-size: 10px;">synchronized</a> <a href="/tags/while/" style="font-size: 10px;">while</a> <a href="/tags/代码混淆/" style="font-size: 10px;">代码混淆</a> <a href="/tags/信号量/" style="font-size: 10px;">信号量</a> <a href="/tags/关键帧/" style="font-size: 10px;">关键帧</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/分割线/" style="font-size: 10px;">分割线</a> <a href="/tags/加密/" style="font-size: 10px;">加密</a> <a href="/tags/动画/" style="font-size: 13.33px;">动画</a> <a href="/tags/升级/" style="font-size: 10px;">升级</a> <a href="/tags/图片/" style="font-size: 10px;">图片</a> <a href="/tags/图片合成/" style="font-size: 10px;">图片合成</a> <a href="/tags/多线程/" style="font-size: 13.33px;">多线程</a> <a href="/tags/学习笔记/" style="font-size: 16.67px;">学习笔记</a> <a href="/tags/弹簧动画/" style="font-size: 10px;">弹簧动画</a> <a href="/tags/手势解锁/" style="font-size: 10px;">手势解锁</a> <a href="/tags/持久化/" style="font-size: 10px;">持久化</a> <a href="/tags/排序/" style="font-size: 10px;">排序</a> <a href="/tags/控制流/" style="font-size: 10px;">控制流</a> <a href="/tags/数组/" style="font-size: 10px;">数组</a> <a href="/tags/智能硬件/" style="font-size: 10px;">智能硬件</a> <a href="/tags/枚举/" style="font-size: 10px;">枚举</a> <a href="/tags/核心动画/" style="font-size: 10px;">核心动画</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/毛玻璃/" style="font-size: 10px;">毛玻璃</a> <a href="/tags/浅拷贝/" style="font-size: 10px;">浅拷贝</a> <a href="/tags/深拷贝/" style="font-size: 10px;">深拷贝</a> <a href="/tags/生命周期/" style="font-size: 10px;">生命周期</a> <a href="/tags/硬件序列号/" style="font-size: 10px;">硬件序列号</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/网络请求/" style="font-size: 10px;">网络请求</a> <a href="/tags/蓝牙/" style="font-size: 10px;">蓝牙</a> <a href="/tags/设备型号/" style="font-size: 10px;">设备型号</a> <a href="/tags/证书/" style="font-size: 10px;">证书</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/黑线/" style="font-size: 10px;">黑线</a>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 zipan<br>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/About" class="mobile-nav-link">关于</a>
+  
+    <a href="/Wiki" class="mobile-nav-link">Wiki</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+</div>
+</body>
+</html>
