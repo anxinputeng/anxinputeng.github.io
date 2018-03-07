@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="笃 行">
 <meta property="og:description" content="简单记录一下GCD信号量的使用。 123456789101112131415dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);ViewController * vc = [ViewController new];vc.myBlock = ^&amp;#123;    dispatch_semaphore_signal(semapho">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-01T08:09:26.939Z">
+<meta property="og:updated_time" content="2018-03-07T09:03:12.994Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GCD信号量[简记]">
 <meta name="twitter:description" content="简单记录一下GCD信号量的使用。 123456789101112131415dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);ViewController * vc = [ViewController new];vc.myBlock = ^&amp;#123;    dispatch_semaphore_signal(semapho">
@@ -100,15 +100,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>简单记录一下GCD信号量的使用。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);</span><br><span class="line">ViewController * vc = [ViewController new];</span><br><span class="line">vc.myBlock = ^&#123;</span><br><span class="line">    dispatch_semaphore_signal(semaphore);</span><br><span class="line">    NSLog(@<span class="string">"信号量 -1"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//延迟2秒执行myBlock</span><br><span class="line">dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)),dispatch_get_global_queue(0, 0), ^&#123;</span><br><span class="line">    vc.myBlock();</span><br><span class="line">    NSLog(@<span class="string">"等待2秒结束"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);</span><br><span class="line">NSLog(@<span class="string">"接收成功"</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);</span><br><span class="line">ViewController * vc = [ViewController new];</span><br><span class="line">vc.myBlock = ^&#123;</span><br><span class="line">    dispatch_semaphore_signal(semaphore);</span><br><span class="line">    NSLog(@<span class="string">"信号量 +1"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//延迟2秒执行myBlock</span><br><span class="line">dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)),dispatch_get_global_queue(0, 0), ^&#123;</span><br><span class="line">    vc.myBlock();</span><br><span class="line">    NSLog(@<span class="string">"等待2秒结束"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);</span><br><span class="line">NSLog(@<span class="string">"接收成功"</span>);</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>执行结果：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2017-08-20 15:45:30.747164+0800 OC[48972:1332777] 等待2秒结束</span><br><span class="line">2017-08-20 15:45:30.747477+0800 OC[48972:1332777] 信号量 -1</span><br><span class="line">2017-08-20 15:45:30.747493+0800 OC[48972:1332730] 接收成功</span><br></pre></td></tr></table></figure></p>
+<p>执行结果：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2017-08-20 15:45:30.747164+0800 OC[48972:1332777] 等待2秒结束</span><br><span class="line">2017-08-20 15:45:30.747477+0800 OC[48972:1332777] 信号量 +1</span><br><span class="line">2017-08-20 15:45:30.747493+0800 OC[48972:1332730] 接收成功</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zipan.me/2017/08/20/GCD信号量[简记]/" data-id="cje8bd5bl0007h9s6eqh47sj2" class="article-share-link">分享到</a>
+        <a data-url="http://zipan.me/2017/08/20/GCD信号量[简记]/" data-id="cjeguvvjp0005pjs61hifaf1c" class="article-share-link">分享到</a>
       
 
       

@@ -116,7 +116,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zipan.me/2017/08/20/CoreAnimation核心动画/" data-id="cje8bd5bg0005h9s62l47cubx" class="article-share-link">分享到</a>
+        <a data-url="http://zipan.me/2017/08/20/CoreAnimation核心动画/" data-id="cjeguvvjh0002pjs6bfdb4686" class="article-share-link">分享到</a>
       
 
       
@@ -168,7 +168,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zipan.me/2017/08/20/UIView Animation/" data-id="cje8bd5cb000zh9s6yhwwgzhy" class="article-share-link">分享到</a>
+        <a data-url="http://zipan.me/2017/08/20/UIView Animation/" data-id="cjeguvvko0014pjs6b0x2upco" class="article-share-link">分享到</a>
       
 
       
@@ -210,7 +210,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>简单记录一下GCD信号量的使用。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);</span><br><span class="line">ViewController * vc = [ViewController new];</span><br><span class="line">vc.myBlock = ^&#123;</span><br><span class="line">    dispatch_semaphore_signal(semaphore);</span><br><span class="line">    NSLog(@<span class="string">"信号量 -1"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//延迟2秒执行myBlock</span><br><span class="line">dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)),dispatch_get_global_queue(0, 0), ^&#123;</span><br><span class="line">    vc.myBlock();</span><br><span class="line">    NSLog(@<span class="string">"等待2秒结束"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);</span><br><span class="line">NSLog(@<span class="string">"接收成功"</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);</span><br><span class="line">ViewController * vc = [ViewController new];</span><br><span class="line">vc.myBlock = ^&#123;</span><br><span class="line">    dispatch_semaphore_signal(semaphore);</span><br><span class="line">    NSLog(@<span class="string">"信号量 +1"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//延迟2秒执行myBlock</span><br><span class="line">dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)),dispatch_get_global_queue(0, 0), ^&#123;</span><br><span class="line">    vc.myBlock();</span><br><span class="line">    NSLog(@<span class="string">"等待2秒结束"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);</span><br><span class="line">NSLog(@<span class="string">"接收成功"</span>);</span><br></pre></td></tr></table></figure>
         
           <p class="article-more-link">
             <a href="/2017/08/20/GCD信号量[简记]/#more">Read More</a>
@@ -220,7 +220,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zipan.me/2017/08/20/GCD信号量[简记]/" data-id="cje8bd5bl0007h9s6eqh47sj2" class="article-share-link">分享到</a>
+        <a data-url="http://zipan.me/2017/08/20/GCD信号量[简记]/" data-id="cjeguvvjp0005pjs61hifaf1c" class="article-share-link">分享到</a>
       
 
       
@@ -276,7 +276,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zipan.me/2017/08/18/Swift学习笔记（六） -- 枚举/" data-id="cje8bd5c2000rh9s6rou5w91d" class="article-share-link">分享到</a>
+        <a data-url="http://zipan.me/2017/08/18/Swift学习笔记（六） -- 枚举/" data-id="cjeguvvka000mpjs6zc4u179s" class="article-share-link">分享到</a>
       
 
       
@@ -334,7 +334,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zipan.me/2017/08/15/Swift学习笔记（五） -- 闭包/" data-id="cje8bd5c1000nh9s6wtclzpd9" class="article-share-link">分享到</a>
+        <a data-url="http://zipan.me/2017/08/15/Swift学习笔记（五） -- 闭包/" data-id="cjeguvvki000wpjs6l1470zyu" class="article-share-link">分享到</a>
       
 
       
@@ -396,7 +396,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zipan.me/2017/08/15/Swift学习笔记（四） -- 函数/" data-id="cje8bd5c5000th9s6t4qm5roe" class="article-share-link">分享到</a>
+        <a data-url="http://zipan.me/2017/08/15/Swift学习笔记（四） -- 函数/" data-id="cjeguvvk7000jpjs6bmzf3xio" class="article-share-link">分享到</a>
       
 
       
@@ -452,7 +452,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zipan.me/2017/08/15/Swift学习笔记（三） -- 控制流/" data-id="cje8bd5bv000gh9s61q2fflwc" class="article-share-link">分享到</a>
+        <a data-url="http://zipan.me/2017/08/15/Swift学习笔记（三） -- 控制流/" data-id="cjeguvvk5000gpjs6antnuh7x" class="article-share-link">分享到</a>
       
 
       
@@ -508,7 +508,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zipan.me/2017/08/15/Swift学习笔记（二） -- Set类型/" data-id="cje8bd5by000kh9s69aog3ow0" class="article-share-link">分享到</a>
+        <a data-url="http://zipan.me/2017/08/15/Swift学习笔记（二） -- Set类型/" data-id="cjeguvvkc000rpjs6j58kvvjc" class="article-share-link">分享到</a>
       
 
       
@@ -568,7 +568,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zipan.me/2017/08/15/Swift学习笔记（一） -- 元组Tuple/" data-id="cje8bd5br000fh9s6imo3fnor" class="article-share-link">分享到</a>
+        <a data-url="http://zipan.me/2017/08/15/Swift学习笔记（一） -- 元组Tuple/" data-id="cjeguvvk1000fpjs6o0irft64" class="article-share-link">分享到</a>
       
 
       
@@ -621,7 +621,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zipan.me/2017/07/24/详解NSString为什么要用copy:strong关键字/" data-id="cje8bd5db0024h9s6h5s4dki1" class="article-share-link">分享到</a>
+        <a data-url="http://zipan.me/2017/07/24/详解NSString为什么要用copy:strong关键字/" data-id="cjeguvvlh0022pjs6nbv6crkt" class="article-share-link">分享到</a>
       
 
       
