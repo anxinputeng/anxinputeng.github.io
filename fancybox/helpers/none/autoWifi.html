@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <title>Hello World</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+<textarea  id="clock" rows="30" cols="30">
+</textarea>
+
+<script>
+    var int=self.setInterval("reqFun()",1000);
+
+    function reqFun() {
+        //发送请求
+        var tel = window.atob("MTg4MTAxNDY1MjA=")
+        var url = 'http://172.18.10.1/auth.asp?usr=C302&pwd='
+        url = url+tel
+
+        //第一步：建立所需的对象
+        var httpRequest =new XMLHttpRequest();
+        //Respons
+        httpRequest.onreadystatechange = function () {
+            //clock();
+            document.getElementById("clock").value = url;
+        }
+        //第二步：打开连接  将请求参数写在url中  ps:"./Ptest.php?name=test&nameone=testone"
+        httpRequest.open('GET',url ,true);//异步接受响应
+        //第三步：发送请求  将请求参数写在URL中
+        httpRequest.send();
+    }
+
+    function clock()
+    {
+        var d=new Date();
+        var t=d.toLocaleTimeString();
+        document.getElementById("clock").value=t;
+    }
+
+</script>
+
+</body>
+
+</html>
