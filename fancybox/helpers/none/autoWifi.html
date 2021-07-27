@@ -8,25 +8,26 @@
 
 <body>
 
-<textarea  id="clock" rows="30" cols="30">
-</textarea>
+<input  id="clock" type="text">
 
 <script>
     var int=self.setInterval("reqFun()",1000);
 
     function reqFun() {
         //发送请求
-        var tel = window.atob("MTg4MTAxNDY1MjA=")
-        var url = 'http://172.18.10.1/auth.asp?usr=C302&pwd='
+        var tel = window.atob("MTcyLjE4LjEwLjEvYXV0aC5hc3A/dXNyPUMzMDImcHdkPTE4ODEwMTQ2NTIw")
+        var url = 'http://'
         url = url+tel
 
         //第一步：建立所需的对象
         var httpRequest =new XMLHttpRequest();
         //Respons
         httpRequest.onreadystatechange = function () {
-            //clock();
-            document.getElementById("clock").value = url;
+
+            clock();
+            //document.getElementById("clock").value = httpRequest.responseText;
         }
+
         //第二步：打开连接  将请求参数写在url中  ps:"./Ptest.php?name=test&nameone=testone"
         httpRequest.open('GET',url ,true);//异步接受响应
         //第三步：发送请求  将请求参数写在URL中
